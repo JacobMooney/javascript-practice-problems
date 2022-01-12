@@ -12,6 +12,7 @@
 // [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
 
 function findOdd(arr) {
+  //First reduce the number array into an object where the keys are the numbers and the values are the occurances.
   let reducedArr = arr.reduce((obj, index) => {
     if (obj[index]) {
       obj[index] += 1;
@@ -20,6 +21,7 @@ function findOdd(arr) {
     }
     return obj;
   }, {});
+  //Then we return the odd number by using keys to make an array of the keys, which we then use find() to look at each key and check if it's value is odd. This returns the key as a string, so we can wrap this operation in Number to convert it.
   return Number(
     Object.keys(reducedArr).find((key) => reducedArr[key] % 2 !== 0)
   );
