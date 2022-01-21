@@ -10,34 +10,37 @@
 
 // Build a function to compute it, resting assured that only positive integers are going to be there and you will be always given a valid index; but we also want to go to pretty popular events, so be ready for big queues with people getting plenty of tickets.
 
+
+//**Curretnly not complete**
 function queue(que, pos) {
+  //Step 1
   let minCount = 0;
   let queObj = que.reduce((people, num, index) => {
-    people[index] = { [index]: num };
+    people[index] = num;
     return people;
-  }, []);
+  }, {});
+  queObj;
 
-  console.log(que[pos % que.length]);
-  while (queObj[pos][pos] > 0) {
-    pos
-    console.log(que.length);
-    let index = pos % que.length;
-    index;
-    queObj;
+  //Step 2
+  let index = 0;
+  while (queObj[pos] > 0) {
+    console.log(1 > Object.keys(queObj).length ? (index = 0) : index);
     //Add to the "time" count
     minCount += 1;
     //Subtract 1 from first object in the array
-    queObj[0][0] -= 1;
-    queObj;
+    queObj[index] -= 1;
 
-    if (queObj[0][0] < 0) {
-      queObj.splice(0, 1);
-    } else {
-      let gotTicket = queObj.splice(0, 1);
-      queObj.push(gotTicket[0]);
-      console.log(queObj[0][1]);
+    if (queObj[index] < 1) {
+      delete queObj[index];
       queObj;
     }
+    console.log(index > Object.keys(queObj).length);
+    if (index > Object.keys(queObj).length) {
+      index = 0;
+    } else {
+      index += 1;
+    }
+    queObj;
   }
   return minCount;
 }
