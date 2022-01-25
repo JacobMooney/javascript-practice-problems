@@ -22,9 +22,10 @@ function rgb(r, g, b) {
       return val;
     }
   });
-  
+
   let hex =
     ("0" + rgbArr[0].toString(16)).slice(-2) +
+    //This code is taking each index of the mapped array, and then uses ("0" + value).slice(-2) to prepend a 0 to anything less than 10
     ("0" + rgbArr[1].toString(16)).slice(-2) +
     ("0" + rgbArr[2].toString(16)).slice(-2);
 
