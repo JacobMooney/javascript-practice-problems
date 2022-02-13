@@ -22,55 +22,67 @@
 //solution cannot be less than input
 //Shifting values from the lowest spot (ones place, tens place, hundreds places, etc) to the higher places will find the value fastest
 
+// function nextBigger(num) {
+//   let initArr = Array.from(String(num), Number);
+//   let newNums = [];
+
+//   function buildNums(numArr, count = 0) {
+//     for (let i = 0; i < numArr.length; i++) {
+//       let testArr = numArr.slice();
+//       let num1 = testArr[count];
+//       let num2 = testArr[i];
+//       testArr[count] = num2;
+//       testArr[i] = num1;
+//       testArr
+
+//       console.log(testArr.join(""));
+//       //IN - 30861
+//       //OUT - 31068
+//       if(Number(testArr.join(""))>num){
+//         newNums.push(Number(testArr.join("")));
+//       }
+//     }
+
+//     //Incriment count by 1
+//     count++;
+//     numArr;
+//     if (count > numArr.length) {
+//       return;
+//     } else {
+//       buildNums(numArr, count);
+//     }
+//   }
+//   buildNums(initArr);
+
+//   console.log(newNums.sort());
+
+//   // let nextNum = newNums
+//   //   .filter((number) => {
+//   //     return number > num;
+//   //   })
+//   //   .sort()[0];
+//   //   nextNum
+//   //   if(nextNum <= num || nextNum === undefined){
+//   //     return -1;
+//   //   }else{
+//   //     return nextNum;
+//   //   }
+// }
+
 function nextBigger(num) {
-  let initArr = Array.from(String(num), Number);
-  let newNums = [];
-
-  function buildNums(numArr, count = 0) {
-    for (let i = 0; i < numArr.length; i++) {
-      let testArr = numArr;
-      let num1 = testArr[count];
-      let num2 = testArr[i];
-      console.log("Iteration:", i, "Count:", count, "Num1:", num1, "Num2:", num2);
-      testArr[count] = num2;
-      testArr[i] = num1;
-      
-      // 30861
-      console.log(testArr[count])
-      console.log(testArr.join(""));
-      console.log(i);
-      console.log(count);
-
-      if(Number(testArr.join(""))>num){
-        newNums.push(Number(testArr.join("")));
-      }
-    }
-
-    //Incriment count by 1
-    count++;
-    numArr
-    if (count > 1) {
-      return;
-    } else {
-      buildNums(numArr, count);
+  let found = false;
+  let nextNum = num;
+  while (!found) {
+    nextNum++;
+    if (
+      String(num).split("").sort().join("") ===
+      String(nextNum).split("").sort().join("")
+    ) {
+      found = true;
+      return nextNum;
     }
   }
-  buildNums(initArr);
-
-  console.log(newNums);
-
-  
-  // let nextNum = newNums
-  //   .filter((number) => {
-  //     return number > num;
-  //   })
-  //   .sort()[0];
-  //   nextNum
-  //   if(nextNum <= num || nextNum === undefined){
-  //     return -1;
-  //   }else{
-  //     return nextNum;
-  //   }
+  return nextNum;
 }
 
 // console.log(nextBigger(12) === 21)
