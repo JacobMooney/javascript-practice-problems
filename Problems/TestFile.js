@@ -1,189 +1,211 @@
-//Test file, no specific code problems
+// //Test file, no specific code problems
 
-let obj = {
-  name: "Thomas",
-  lastName: "Shelby",
-  age: 34,
-};
-let arr = [1, 2, "three", 4, 5, "six"];
-
-//Object Destructuring
-const { name, lastName, age } = obj;
-
-name;
-lastName;
-age;
-//
-
-//Spread operations
-
-let newArr = [...arr, "seven", 8];
-newArr;
-
-let newObj = { ...arr };
-newObj;
-
-//Example from https://kentcdodds.com/blog/javascript-to-know-for-react
-
-// refactor this to a single line of destructuring...
-// const info = {
-//   title: "Once Upon a Time",
-//   protagonist: {
-//     name: "Emma Swan",
-//     enemies: [
-//       { name: "Regina Mills", title: "Evil Queen" },
-//       { name: "Cora Mills", title: "Queen of Hearts" },
-//       { name: "Peter Pan", title: `The boy who wouldn't grow up` },
-//       { name: "Zelena", title: "The Wicked Witch" },
-//     ],
-//   },
+// let obj = {
+//   name: "Thomas",
+//   lastName: "Shelby",
+//   age: 34,
 // };
-// const { protagonist } = info;
-// console.log(protagonist);
-// const title = info.title;
-// const protagonistName = info.protagonist.name;
-// const enemy = info.protagonist.enemies[3];
-// const enemyTitle = enemy.title;
-// const enemyName = enemy.name;
-// return `${enemyName} (${enemyTitle}) is an enemy to ${protagonistName} in "${title}"`;
+// let arr = [1, 2, "three", 4, 5, "six"];
 
+// //Object Destructuring
+// const { name, lastName, age } = obj;
 
-/**
-Exercise 1
-Rewrite the code below to use array destructuring instead of assigning each value to a variable.
-*/
-{
-  console.log("EXERCISE 1");
+// name;
+// lastName;
+// age;
+// //
 
-  let item = ["Egg", 0.25, 12];
+// //Spread operations
 
-  // let name = item[0];
-  // let price = item[1];
-  // let quantity = item[2];
+// let newArr = [...arr, "seven", 8];
+// newArr;
 
-  let[name,price,quantity] = item;
+// let newObj = { ...arr };
+// newObj;
 
-  console.log(`Item: ${name}, Quantity: ${quantity}, Price: ${price}`);
-  console.log();
-}
+// //Example from https://kentcdodds.com/blog/javascript-to-know-for-react
 
-/**
-Exercise 2
-Rewrite the code below to assign each number to the right variable.
-*/
-{
-  console.log("EXERCISE 2");
+// // refactor this to a single line of destructuring...
+// // const info = {
+// //   title: "Once Upon a Time",
+// //   protagonist: {
+// //     name: "Emma Swan",
+// //     enemies: [
+// //       { name: "Regina Mills", title: "Evil Queen" },
+// //       { name: "Cora Mills", title: "Queen of Hearts" },
+// //       { name: "Peter Pan", title: `The boy who wouldn't grow up` },
+// //       { name: "Zelena", title: "The Wicked Witch" },
+// //     ],
+// //   },
+// // };
+// // const { protagonist } = info;
+// // console.log(protagonist);
+// // const title = info.title;
+// // const protagonistName = info.protagonist.name;
+// // const enemy = info.protagonist.enemies[3];
+// // const enemyTitle = enemy.title;
+// // const enemyName = enemy.name;
+// // return `${enemyName} (${enemyTitle}) is an enemy to ${protagonistName} in "${title}"`;
 
-  let numbers = [3, 5, 4, 2, 6, 1];
+// /**
+// Exercise 1
+// Rewrite the code below to use array destructuring instead of assigning each value to a variable.
+// */
+// {
+//   console.log("EXERCISE 1");
 
-  let [three, five, four, two, six, one] = numbers;
+//   let item = ["Egg", 0.25, 12];
 
-  console.log(`One: ${one}, Two: ${two}, Three: ${three}, Four: ${four}, Five: ${five}, Six: ${six}`);
-  console.log();
-}
+//   // let name = item[0];
+//   // let price = item[1];
+//   // let quantity = item[2];
 
-/**
-Exercise 3
-We have an object called 'user'.
-Write the destructuring assignment that reads:
-- 'name' property into the variable 'name'.
-- 'years' property into the variable 'age'.
-- 'isAdmin' property into the variable 'isAdmin' (false, if no such property)
-*/
-{
-  console.log("EXERCISE 3");
+//   let[name,price,quantity] = item;
 
-  let user = { name: "John", years: 30 };
+//   console.log(`Item: ${name}, Quantity: ${quantity}, Price: ${price}`);
+//   console.log();
+// }
 
-  // your code to the left side:
-  let { name:name, years:age, isAdmin=false } = user;
+// /**
+// Exercise 2
+// Rewrite the code below to assign each number to the right variable.
+// */
+// {
+//   console.log("EXERCISE 2");
 
-  console.log(name); // John
-  console.log(age); // 30
-  console.log(isAdmin); // false
-  console.log();
-}
+//   let numbers = [3, 5, 4, 2, 6, 1];
 
-/**
-Exercise 4
-Rewrite the code below to use array destructuring instead of assigning each value to a variable.
-*/
-{
-  console.log("EXERCISE 4");
+//   let [three, five, four, two, six, one] = numbers;
 
-  let person = [12, "Chris", "Owen"];
+//   console.log(`One: ${one}, Two: ${two}, Three: ${three}, Four: ${four}, Five: ${five}, Six: ${six}`);
+//   console.log();
+// }
 
-  // let firstName = person[1];
-  // let lastName = person[2];
-  // let age = person[0];
+// /**
+// Exercise 3
+// We have an object called 'user'.
+// Write the destructuring assignment that reads:
+// - 'name' property into the variable 'name'.
+// - 'years' property into the variable 'age'.
+// - 'isAdmin' property into the variable 'isAdmin' (false, if no such property)
+// */
+// {
+//   console.log("EXERCISE 3");
 
-  let [age, firstName, lastName ] = person
+//   let user = { name: "John", years: 30 };
 
-  console.log(`Person - Age: ${age}, Name: ${firstName} ${lastName}`);
-  console.log();
-}
+//   // your code to the left side:
+//   let { name:name, years:age, isAdmin=false } = user;
 
-/** 
-Exercise 5
-Rewrite the code below to use array destructuring instead of assigning each value to a variable.
-Make sure not to have unused variables.
-Hint: https://untangled.io/in-depth-es6-destructuring-with-assembled-avengers
-*/
-{
-  console.log("EXERCISE 5");
+//   console.log(name); // John
+//   console.log(age); // 30
+//   console.log(isAdmin); // false
+//   console.log();
+// }
 
-  let person = ["Chris", 12, "Owen"];
+// /**
+// Exercise 4
+// Rewrite the code below to use array destructuring instead of assigning each value to a variable.
+// */
+// {
+//   console.log("EXERCISE 4");
 
-  // let firstName = person[0];
-  // let lastName = person[2];
+//   let person = [12, "Chris", "Owen"];
 
-  let [firstName,,lastName] = person;
+//   // let firstName = person[1];
+//   // let lastName = person[2];
+//   // let age = person[0];
 
-  console.log(`Name: ${firstName} ${lastName}`);
-  console.log();
-}
+//   let [age, firstName, lastName ] = person
 
-/** 
-Exercise 6
-Using Array Destructuring get the last name from the array. 
-Hint: https://untangled.io/in-depth-es6-destructuring-with-assembled-avengers
-*/
-{
-  console.log("EXERCISE 6");
+//   console.log(`Person - Age: ${age}, Name: ${firstName} ${lastName}`);
+//   console.log();
+// }
 
-  const students = ['Christina', 'Jon', 'Alexandare'];
+// /**
+// Exercise 5
+// Rewrite the code below to use array destructuring instead of assigning each value to a variable.
+// Make sure not to have unused variables.
+// Hint: https://untangled.io/in-depth-es6-destructuring-with-assembled-avengers
+// */
+// {
+//   console.log("EXERCISE 5");
 
-  // Write your code here
-  const [,,lastName] = students;
+//   let person = ["Chris", 12, "Owen"];
 
-  console.log(lastName);
-  console.log();
-}
+//   // let firstName = person[0];
+//   // let lastName = person[2];
 
-/**
-Exercise 7
-Using Array Destructuring get all of the names from this Nested Array
-Hint: https://untangled.io/in-depth-es6-destructuring-with-assembled-avengers
-*/
-{
-  console.log("EXERCISE 7");
+//   let [firstName,,lastName] = person;
 
-  const moreStudents = [
-    'Chris', 
-    ['Ahmad', 'Antigoni'], 
-    ['Toby', 'Sam']
-  ];
+//   console.log(`Name: ${firstName} ${lastName}`);
+//   console.log();
+// }
 
-  // Write your code here
-  const [student1, [student2, student3], [student4, student5]] = moreStudents;
+// /**
+// Exercise 6
+// Using Array Destructuring get the last name from the array.
+// Hint: https://untangled.io/in-depth-es6-destructuring-with-assembled-avengers
+// */
+// {
+//   console.log("EXERCISE 6");
 
-  console.log(student1, student2, student3, student4, student5);
+//   const students = ['Christina', 'Jon', 'Alexandare'];
 
-  const obj = { a: 1, b: 2, c: 3 };
-  const { a: propValue, ...remaining } = obj; // (A)
-  
-  console.log(
-    assert.equal(propValue, 1)
-  );
-  assert.deepEqual(remaining, {b:2, c:3});
-}
+//   // Write your code here
+//   const [,,lastName] = students;
+
+//   console.log(lastName);
+//   console.log();
+// }
+
+// /**
+// Exercise 7
+// Using Array Destructuring get all of the names from this Nested Array
+// Hint: https://untangled.io/in-depth-es6-destructuring-with-assembled-avengers
+// */
+// {
+//   console.log("EXERCISE 7");
+
+//   const moreStudents = [
+//     'Chris',
+//     ['Ahmad', 'Antigoni'],
+//     ['Toby', 'Sam']
+//   ];
+
+//   // Write your code here
+//   const [student1, [student2, student3], [student4, student5]] = moreStudents;
+
+//   console.log(student1, student2, student3, student4, student5);
+
+//   const obj = { a: 1, b: 2, c: 3 };
+//   const { a: propValue, ...remaining } = obj; // (A)
+
+//   console.log(
+//     assert.equal(propValue, 1)
+//   );
+//   assert.deepEqual(remaining, {b:2, c:3});
+
+//Looping array - arr[(index) % arr.length]);
+
+let arr = [
+  "index0",
+  "index1",
+  "index2",
+  "index3",
+  "index4",
+  "index5",
+  "index6",
+  "index7",
+  "index8",
+  "index9",
+  "index10",
+];
+
+let index = 19;
+
+console.log(index);
+console.log(arr.length);
+console.log((index % arr.length));
+//This will access the index provided, or if the provided index is greater than the length it will loop back to the start
+console.log(arr[index % arr.length]);
