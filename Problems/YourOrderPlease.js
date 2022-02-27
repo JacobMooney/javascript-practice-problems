@@ -11,31 +11,42 @@
 // "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
 // ""  -->  ""
 
-function order(str) {
-  //split incoming array into each word
-  let words = str.split(" ");
-  //holder array
-  let wordSort = [];
+// function order(str) {
+//   //split incoming array into each word
+//   let words = str.split(" ");
+//   //holder array
+//   let wordSort = [];
 
-  //loop through the array
-  for (let i = 0; i < words.length; i++) {
-    //for each word in the words array, we are going to assign the equivilant index in the wordSort array to the value found by "words[i].split("").sort()[0]"
-      //this takes the current word, splits into chars, then sorts the chars, which will sort the single num to index zero which we return as the index in wordSort we want to assign the current word to
-        //to be clearer this means:
-        //iteration i=0 the wordSort array looks like [, ,is2] -using the first test case
-        //iteration i=1 the wordSort array looks like [,Thi1s,is2]
-        //iteration i=2 the wordSort array looks like [,Thi1s,is2, ,T4est]
-        //iteration i=3 the wordSort array looks like [,Thi1s,is2,3a,T4est]
+//   //loop through the array
+//   for (let i = 0; i < words.length; i++) {
+//     //for each word in the words array, we are going to assign the equivilant index in the wordSort array to the value found by "words[i].split("").sort()[0]"
+//       //this takes the current word, splits into chars, then sorts the chars, which will sort the single num to index zero which we return as the index in wordSort we want to assign the current word to
+//         //to be clearer this means:
+//         //iteration i=0 the wordSort array looks like [, ,is2] -using the first test case
+//         //iteration i=1 the wordSort array looks like [,Thi1s,is2]
+//         //iteration i=2 the wordSort array looks like [,Thi1s,is2, ,T4est]
+//         //iteration i=3 the wordSort array looks like [,Thi1s,is2,3a,T4est]
 
-    wordSort[words[i].split("").sort()[0]] = words[i]; //?
-  }
-  //return the wordSort array, join it, and trim off the extra whitespace
-  return wordSort.join(" ").trim();
+//     wordSort[words[i].split("").sort()[0]] = words[i]; //?
+//   }
+//   //return the wordSort array, join it, and trim off the extra whitespace
+//   return wordSort.join(" ").trim();
+// }
+
+
+//Solution from someone else that was cool, the smart thing is using sort() and using .match(/\d/) on each argument to reduce them down to only numbers (the regex /\d/ is for numbers 0-9)
+function order(words) {
+  return words
+    .split(" ")
+    .sort(function (a, b) {
+      return a.match(/\d/) - b.match(/\d/);
+    })
+    .join(" ");
 }
 
-console.log(order("is2 Thi1s T4est 3a"), "Thi1s is2 3a T4est")
-console.log(
-  order("4of Fo1r pe6ople g3ood th5e the2"),
-  "Fo1r the2 g3ood 4of th5e pe6ople"
-);
-console.log(order(""), "", "empty input should return empty string" )
+console.log(order("is2 Thi1s T4est 3a"), "Thi1s is2 3a T4est");
+// console.log(
+//   order("4of Fo1r pe6ople g3ood th5e the2"),
+//   "Fo1r the2 g3ood 4of th5e pe6ople"
+// );
+// console.log(order(""), "", "empty input should return empty string");
