@@ -41,7 +41,9 @@
 // Ref
 // https://en.wikipedia.org/wiki/Prime_gap
 
-//Solution Works, but takes more time than Kata will allow. Need to optimize
+//Solution Works, but takes more time than Kata will allow. Need to optimize.
+
+//Possible change could be during each prime check hold onto that single number and check if the next prime found satisfies the gap condition, if not replace the old prime with the new and continue till you reach the end. 
 
 function gap(gap, start, end) {
   //holder array for primes
