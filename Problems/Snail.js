@@ -34,15 +34,16 @@ function snail(arrays) {
     return sum;
   }, 0); //?
 
-  let checkLen = arrays[0].length;
+  let checkLen = arrays[0].length-1; //?
   let x = 0;
   let y = 0;
 
   for (let i = 0; i < totalLen; i++) {
-    arrays[x][y] //?
-    if(i === checkLen){
-      x++;
-    }
+    console.log(`This x ${x} in y ${y} row, value ${arrays[y][x]}`)
+    pathArr.push(arrays[y][x]); //?
+    if(x === checkLen){y++;}
+    if (x < checkLen) {x++;}
+    if (x === checkLen && y === checkLen) {x--;}
   }
 
   pathArr; //?

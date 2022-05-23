@@ -58,3 +58,5 @@ function towerBuilder(floors) {
 console.log(towerBuilder(1), ["*"]);
 console.log(towerBuilder(2), [" * ","***"]);
 console.log(towerBuilder(3), ["  *  ", " *** ", "*****"]);
+console.log(towerBuilder(4), ["  *  ", " *** ", "*****"]);
+console.log(towerBuilder(5), ["  *  ", " *** ", "*****"]);
